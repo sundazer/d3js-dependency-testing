@@ -1,9 +1,11 @@
 import * as express from 'express';
+import { Server } from 'http';
 import * as morgan from 'morgan';
 import * as path from 'path';
 import * as winston from 'winston';
 
 export class App {
+    public server: Server;
     private express: express.Application;
 
     constructor(port: number) {
@@ -13,7 +15,7 @@ export class App {
 
         // Start the server
         winston.info(`Listening on port ${port}`);
-        this.express.listen(port);
+        this.server = this.express.listen(port);
     }
 
     private middleware(): void {
@@ -26,7 +28,7 @@ export class App {
     }
 
     private routes(): void {
-        this.express.get('/', (req, res, next) => {
+        this.express.get('/', (req, res) => {
             res.render('index', { title: 'D3js dependendy testing' });
         });
     }
