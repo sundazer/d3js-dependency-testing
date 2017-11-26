@@ -30,7 +30,7 @@ export class App {
 
     private routes(): void {
         this.express.get('/', (req, res) => {
-            res.render('index', { title: 'D3js dependendy testing' });
+            res.render('index', { title: 'D3js dependency testing' });
         });
 
         this.express.get('/data', (req, res) => {
