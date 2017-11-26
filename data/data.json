@@ -2,16 +2,63 @@
     "nodes":
         [
             {
+                "id": 1,
                 "name": "Example",
                 "group": "test"
             },
             {
+                "id": 2,
                 "name": "Another test",
                 "group": "test"
             },
             {
+                "id": 3,
                 "name": "Not part of test",
                 "group": "something else"
+            },
+            {
+                "id": 4,
+                "name": "Testables",
+                "group": "test"
+            },
+            {
+                "id": 5,
+                "name": "More",
+                "group": "test"
+            },
+            {
+                "id": 6,
+                "name": "Same stuff",
+                "group": "something else"
+            },
+            {
+                "id": 7,
+                "name": "Seventh",
+                "group": "no group"
+            },
+            {
+                "id": 8,
+                "name": "Eight",
+                "group": "something else"
+            }
+        ],
+    "links":
+        [
+            {
+                "from": 1,
+                "to": 3
+            },
+            {
+                "from": 2,
+                "to": 4
+            },
+            {
+                "from": 2,
+                "to": 3
+            },
+            {
+                "from": 7,
+                "to": 8
             }
         ]
 }
