@@ -37,3 +37,4 @@ gulp.task('clean', () => {
 
 gulp.task('default', ['watch']);
 gulp.task('build', ['clean', 'tsPipeline:build:dev']);
+gulp.task('build:prod', ['clean', 'tsPipeline:build:release']);
