@@ -4,7 +4,7 @@
   "description": "Testing D3js dependency graph",
   "main": "index.ts",
   "scripts": {
-    "start": "gulp build && ts-node src/index.ts",
+    "start": "ts-node src/index.ts",
     "test": "mocha --reporter spec --require ts-node/register \"test/**/*.test.ts\"",
     "build": "gulp build",
     "watch": "gulp watch"

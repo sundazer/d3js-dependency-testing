@@ -2,4 +2,4 @@
 
 ## Usage
 
-`npm install` and `npm start` to install dependencies and start a local server. Visit http://localhost:4200 to see results.
+First install dependencies with `npm install`. Then build the distributed files with `npm run build`. Finally run `npm start` to start a local server. Visit http://localhost:4200 to see results.
