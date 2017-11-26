@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/sundazer/d3js-dependency-testing#readme",
   "dependencies": {
+    "@types/node": "^8.0.53",
     "d3": "^4.11.0",
     "express": "^4.16.2",
     "morgan": "^1.9.0",
@@ -36,7 +37,6 @@
     "@types/express": "^4.0.39",
     "@types/mocha": "^2.2.44",
     "@types/morgan": "^1.7.35",
-    "@types/node": "^8.0.53",
     "@types/pug": "^2.0.4",
     "@types/winston": "^2.3.7",
     "chai": "^4.1.2",
