@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const ts = require('gulp-typescript');
 const del = require('del');
 const tsPipeline = require('gulp-webpack-typescript-pipeline');
+const nodemon = require('nodemon');
 
 const tsProject = ts.createProject('tsconfig.json');
 
@@ -15,8 +16,19 @@ tsPipeline.registerBuildGulpTasks(
     }
 )
 
-gulp.task('watch', ['clean', 'tsPipeline:build:dev'], () => {
-    gulp.watch('src/**/*.ts', ['scripts']);
+gulp.task('watch', ['clean', 'tsPipeline:build:dev', 'serve'], () => {
+    gulp.watch('views/**/*.ts', ['tsPipeline:watch']);
+});
+
+gulp.task('serve', () => {
+    return nodemon({
+        watch: "src",
+        ext: "ts",
+        exec: "ts-node ./src/index.ts"
+    })
+    .on('restart', () => {
+        console.log('Server restarted');
+    });
 });
 
 gulp.task('clean', () => {

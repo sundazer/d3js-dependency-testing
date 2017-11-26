@@ -42,6 +42,15 @@ export class App {
                 res.json(JSON.parse(data));
             });
         });
+
+        this.express.use((req, res) => {
+            res.status(404).send('Nothing here');
+        });
+
+        this.express.use((err: Error, req: express.Request, res: express.Response) => {
+            winston.error(`Generic error handler: ${err}`);
+            res.status(500).send('Something went wrong');
+        });
     }
 
 }
