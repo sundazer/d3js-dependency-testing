@@ -1,4 +1,5 @@
 import * as express from 'express';
+import * as fs from 'fs';
 import { Server } from 'http';
 import * as morgan from 'morgan';
 import * as path from 'path';
@@ -30,6 +31,16 @@ export class App {
     private routes(): void {
         this.express.get('/', (req, res) => {
             res.render('index', { title: 'D3js dependendy testing' });
+        });
+
+        this.express.get('/data', (req, res) => {
+            fs.readFile(path.join('data', 'data.json'), 'utf-8', (err, data) => {
+                if (err) {
+                    winston.error(`Error reading file: ${err}`);
+                    return res.status(500).json('{}');
+                }
+                res.json(JSON.parse(data));
+            });
         });
     }
 

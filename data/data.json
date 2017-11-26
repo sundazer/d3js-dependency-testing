@@ -1,0 +1,17 @@
+{
+    "nodes":
+        [
+            {
+                "name": "Example",
+                "group": "test"
+            },
+            {
+                "name": "Another test",
+                "group": "test"
+            },
+            {
+                "name": "Not part of test",
+                "group": "something else"
+            }
+        ]
+}
