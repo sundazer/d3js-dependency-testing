@@ -26,4 +26,16 @@ describe('Server', () => {
         })
         .then(done, done);
     });
+
+    describe('data route', () => {
+        it('should respond with json data', (done) => {
+            chai.request(server)
+            .get('/data')
+            .then((res) => {
+                expect(res).to.have.status(200);
+                expect(res).to.have.header('content-type', 'application/json; charset=utf-8');
+            })
+            .then(done, done);
+        });
+    });
 });
