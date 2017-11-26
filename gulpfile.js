@@ -5,13 +5,6 @@ const tsPipeline = require('gulp-webpack-typescript-pipeline');
 
 const tsProject = ts.createProject('tsconfig.json');
 
-gulp.task('scripts', () => {
-    const tsResult = tsProject.src()
-    .pipe(tsProject());
-
-    return tsResult.js.pipe(gulp.dest('dist'));
-});
-
 tsPipeline.registerBuildGulpTasks(
     gulp,
     {
@@ -22,7 +15,7 @@ tsPipeline.registerBuildGulpTasks(
     }
 )
 
-gulp.task('watch', ['clean, scripts', 'tsPipeline:build:dev'], () => {
+gulp.task('watch', ['clean', 'tsPipeline:build:dev'], () => {
     gulp.watch('src/**/*.ts', ['scripts']);
 });
 
@@ -31,4 +24,4 @@ gulp.task('clean', () => {
 });
 
 gulp.task('default', ['watch']);
-gulp.task('build', ['clean', 'scripts', 'tsPipeline:build:dev']);
+gulp.task('build', ['clean', 'tsPipeline:build:dev']);

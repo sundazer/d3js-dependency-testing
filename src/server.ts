@@ -24,7 +24,7 @@ export class App {
         // Pug templating
         this.express.set('views', './views');
         this.express.set('view engine', 'pug');
-        this.express.use(express.static(path.join(__dirname, 'views')));
+        this.express.use(express.static(path.join('dist', 'views')));
     }
 
     private routes(): void {
