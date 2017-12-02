@@ -1,8 +1,8 @@
 {
     "compilerOptions": {
         "module": "commonjs",
-        "target": "es2015",
-        "noImplicitAny": true,
+        "target": "es5",
+        "noImplicitAny": false,
         "removeComments": true,
         "outDir": "dist"
     },
